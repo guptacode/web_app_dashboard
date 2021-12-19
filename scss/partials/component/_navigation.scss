@@ -1,0 +1,21 @@
+/* ============================================= */
+/*                 Navigation                    */
+/* ============================================= */
+
+#nav-bar {
+    background-color: #341d5c;
+    padding: 20px 0;
+}
+
+#nav-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.nav-item {
+    width: 2.75em;
+    stroke: #fff;
+    fill: #fff;
+}

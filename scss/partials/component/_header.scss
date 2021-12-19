@@ -1,0 +1,37 @@
+/* ============================================= */
+/*                     Header                    */
+/* ============================================= */
+
+.header-container {
+    background-color: #4267B2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#notification {
+    width: 1.75em;
+    margin-right: 10px;
+}
+
+#avatar-and-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: gray 1px solid;
+    padding-left: 5px;
+}
+
+#avatar {
+    height: 3em;
+    border-radius: 50%;
+    padding-right: 5px;
+    
+}
+
+#avatar-and-name h3 {
+    color: #fff;
+    padding-right: 5px;
+    margin: 0;
+}
