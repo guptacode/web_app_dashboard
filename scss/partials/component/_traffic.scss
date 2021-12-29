@@ -1,0 +1,36 @@
+/* ============================================= */
+/*                 Traffic                       */
+/* ============================================= */
+
+#traffic {
+    border-bottom: solid lightgrey 1px;
+}
+
+.traffic-container {
+    margin: 0 10px 10px;
+}
+
+.traffic-header {
+    padding: 15px 0 20px;
+}
+
+.traffic-nav-link {
+    cursor: pointer;
+}
+
+.traffic-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#traffic-h3 {
+    margin-bottom: 10px;
+}
+
+.active {
+    color: $white;
+    background: #81C98F;
+    border-radius: 45%;
+    padding: 7.5px;
+}

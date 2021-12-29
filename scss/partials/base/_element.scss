@@ -3,7 +3,21 @@
 /* ============================================= */
 
 h1 {
-    color: #fff;
+    color: $white;
     margin-right: auto;
-    margin-left: 5px
+    padding-left: 10px
+}
+
+h2 {
+    padding: 10px;
+}
+
+ul {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+a {
+    text-decoration: none;
+    color: $white;
 }
