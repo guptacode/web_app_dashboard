@@ -30,7 +30,8 @@
 
 .active {
     color: $white;
+    height: 2.25rem;
     background: #81C98F;
-    border-radius: 45%;
+    border-radius: calc(2.5rem/2);
     padding: 7.5px;
 }

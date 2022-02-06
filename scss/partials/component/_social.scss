@@ -1,0 +1,60 @@
+/* ============================================= */
+/*                 Social                        */
+/* ============================================= */
+
+#social {
+    border-bottom: solid lightgrey 1px;
+}
+
+#social-h3 {
+    margin: 15px 0 20px;
+}
+
+.social-container {
+    margin: 0 10px 10px;
+}
+
+.social-cards-container {
+    margin-bottom: 20px;
+}
+
+.social-card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #f0e9e1;
+    border: solid grey 1px;
+    border-radius: 5px;
+}
+
+.social-image-container {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    background: $color-primary;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+.social-image {
+    height: 30px;
+    fill: $white;
+    stroke: $color-primary;
+}
+
+.social-text {
+    margin-left: 15px;
+}
+
+.social-text p:first-child {
+    color: $color-primary;
+    font-size: 1.25rem;
+    + p {
+        font-size: 2rem;
+    }
+}
+
+

@@ -1,0 +1,47 @@
+/* ============================================= */
+/*                 Message                       */
+/* ============================================= */
+
+#message {
+    border-bottom: solid lightgrey 1px;
+}
+
+#message-h3 {
+    margin: 15px 0;
+}
+
+.message-container {
+    margin: 0 10px 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form-field {
+    width: 100%;
+    padding: 7.5px;
+    margin-bottom: 10px;
+    background-color: #f2f2f2;
+    border: solid 1px lightgray;
+    border-radius: 5px;
+}
+
+.button-primary {
+    padding: 10px;
+    color: $white;
+    background-color: $color-primary;
+    border: solid 1px lightgray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#messageField {
+    height: 100px;
+}
+
+#send {
+    width: 100%;
+}

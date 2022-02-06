@@ -1,0 +1,46 @@
+/* ============================================= */
+/*            New Members                        */
+/* ============================================= */
+
+#new-members, #recent-activity {
+    border-bottom: solid lightgrey 1px;
+}
+
+#new-members-h3, #activity-h3 {
+    margin: 15px 0 20px;
+}
+
+.new-members-container, .recent-activity-container {
+    margin: 0 10px 10px;
+    .member:last-child {
+        margin: 0 auto;
+        border: none;
+    }
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto 20px;
+    border-bottom: solid lightgrey 1px;
+}
+
+.member-avatar {
+    border-radius: 50%;
+    width: 80px;
+}
+
+.email {
+    color: $color-primary;
+}
+
+.members-text {
+    margin: 7.5px 0 10px;
+    p {
+        text-align: center;
+    }
+}
+

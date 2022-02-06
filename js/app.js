@@ -8,6 +8,14 @@ const trafficNavLink = document.querySelectorAll('.traffic-nav-link');
 const trafficCanvas = document.querySelector('#traffic-chart');
 const dailyTrafficCanvas = document.querySelector('#daily-traffic-chart');
 const mobileCanvas = document.querySelector('#mobile-chart');
+const user = document.getElementById("userField");
+const message = document.getElementById("messageField");
+const send = document.getElementById("send");
+const sendEmail = document.querySelector('#send-email');
+const public = document.querySelector('#public');
+const timezone = document.querySelector('#timezone');
+const save = document.querySelector('#save');
+const cancel = document.querySelector('#cancel');
 
 const trafficData = {
     hourly: {
@@ -193,9 +201,77 @@ trafficHeader.addEventListener('click', (e) => {
     }
 })
 
+//Event listener for Message Send
+send.addEventListener('click', (e) => {
+    if (user.value === "" && message.value === "") {
+        window.alert('Please fill in both the user and message fields before sending');
+    } else if (user.value === "") {
+        window.alert('Please fill out the user field');
+    } else if (message.value === "") {
+        window.alert('Please fill out the message field');
+    } else {
+        window.alert(`Message sent to ${user.value}!`);
+    }
+})
 
+//  Variables for local storage
+let sendEmailNotification;
+let profileToPublic;
+let selectTimezone;
 
+function retrieveSettings() {
+    sendEmailNotification = JSON.parse(localStorage.getItem('sendEmailNotification'));
+    profileToPublic = JSON.parse(localStorage.getItem('profileToPublic'));
+    selectTimezone = localStorage.getItem('selectTimezone');
+}
 
+function enactSettings() {
+    if (sendEmailNotification)  {
+        sendEmail.checked = true;
+     } else {
+        sendEmail.checked = false;
+     }
+  
+     if (profileToPublic) {
+        public.checked = true;
+     } else {
+        public.checked = false;
+     }
+  
+     if (selectTimezone != null && selectTimezone !== "none") {
+        timezone.value = selectTimezone; 
+     } else {
+        timezone.value = "none";
+     }
+}
 
+// Event Listener for Save Settings
+save.addEventListener('click', (e)=> {
+    if (sendEmail.checked) {
+        localStorage.setItem('sendEmailNotification', 'true');
+     } else {
+        localStorage.setItem('sendEmailNotification', 'false');
+     }
+     if (public.checked) {
+        localStorage.setItem('profileToPublic', 'true');
+     }  else {
+        localStorage.setItem('profileToPublic', 'false');
+     }
+     if (timezone.value !== "none") {
+        localStorage.setItem('selectTimezone', timezone.value);
+     } 
 
+     e.preventDefault();
+})
 
+// Event Listener for Settings Cancel
+cancel.addEventListener('click', (e)=> {
+    localStorage.clear();
+   sendEmail.checked = false;
+   public.checked = false;
+   timezone.value = "none"; 
+   e.preventDefault();
+})
+
+retrieveSettings();
+enactSettings();

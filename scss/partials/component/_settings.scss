@@ -1,0 +1,48 @@
+/* ============================================= */
+/*                 Settings                      */
+/* ============================================= */
+
+#settings {
+    border-bottom: solid lightgrey 1px;
+}
+
+#settings-h3 {
+    margin: 15px 0;
+}
+
+.settings-container {
+    margin: 0 10px 15px;
+}
+
+.switch-light {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+ #timezone {
+     margin: 10px 0;
+ } 
+
+ .settings-button {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin: 5px 0 15px;
+ }
+
+ .button-disabled {
+    padding: 10px;
+    color: #fff;
+    background-color: gray;
+    border: solid 1px lightgray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ #save, #cancel {
+     width: 47.5%;
+ }
+
+ 
