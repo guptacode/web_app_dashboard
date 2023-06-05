@@ -111,7 +111,7 @@ const dailyTrafficChart = new Chart(dailyTrafficCanvas, {
     type: 'bar',
     data: dailyTrafficData,
     options: dailyOptions,
-})
+});
 
 const mobileData = {
     labels: ["Desktop", "Tablet", "Phones"],
@@ -144,7 +144,7 @@ const mobileChart = new Chart(mobileCanvas, {
     type: 'doughnut',
     data: mobileData,
     options: mobileOptions,
-})
+});
 
 function timeScale(chart, period) {
     chart.data = trafficData[period];
@@ -162,7 +162,7 @@ alert.addEventListener('click', (e) => {
     if (close.classList.contains('alert-banner-close')){
         alert.style.display = 'none';
     }
-})
+});
 
 // Event listener for Bell Icon
 header.addEventListener('click', (e) => {
@@ -170,7 +170,7 @@ header.addEventListener('click', (e) => {
     if (close.classList.contains('notification-link')){
         dropdownList.style.display = 'block';
     }
-})
+});
 
 // Event listener for Notification 1
 dropdown1.addEventListener('click', (e) => {
@@ -178,7 +178,7 @@ dropdown1.addEventListener('click', (e) => {
     if (close.classList.contains('notification-close')){
         dropdown1.style.display = 'none';
     }
-})
+});
 
 // Event listener for Notification 2
 dropdown2.addEventListener('click', (e) => {
@@ -186,7 +186,7 @@ dropdown2.addEventListener('click', (e) => {
     if (close.classList.contains('notification-close')){
         dropdown2.style.display = 'none';
     }
-})
+});
 
 //Event listener for Line Chart
 trafficHeader.addEventListener('click', (e) => {
@@ -199,7 +199,7 @@ trafficHeader.addEventListener('click', (e) => {
         target.classList.add('active');
         timeScale(trafficChart, timescale);
     }
-})
+});
 
 //Event listener for Message Send
 send.addEventListener('click', (e) => {
@@ -212,7 +212,7 @@ send.addEventListener('click', (e) => {
     } else {
         window.alert(`Message sent to ${user.value}!`);
     }
-})
+});
 
 //  Variables for local storage
 let sendEmailNotification;
@@ -223,7 +223,7 @@ function retrieveSettings() {
     sendEmailNotification = JSON.parse(localStorage.getItem('sendEmailNotification'));
     profileToPublic = JSON.parse(localStorage.getItem('profileToPublic'));
     selectTimezone = localStorage.getItem('selectTimezone');
-}
+};
 
 function enactSettings() {
     if (sendEmailNotification)  {
@@ -243,7 +243,7 @@ function enactSettings() {
      } else {
         timezone.value = "none";
      }
-}
+};
 
 // Event Listener for Save Settings
 save.addEventListener('click', (e)=> {
@@ -262,7 +262,7 @@ save.addEventListener('click', (e)=> {
      } 
 
      e.preventDefault();
-})
+});
 
 // Event Listener for Settings Cancel
 cancel.addEventListener('click', (e)=> {
@@ -271,7 +271,7 @@ cancel.addEventListener('click', (e)=> {
    public.checked = false;
    timezone.value = "none"; 
    e.preventDefault();
-})
+});
 
 retrieveSettings();
 enactSettings();

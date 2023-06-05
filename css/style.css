@@ -420,33 +420,6 @@ a {
   #mobile {
     grid-column: 2/span 1;
   }
-
-  .social-cards-container {
-    display: flex;
-    flex: 1 33%;
-    justify-content: space-between;
-  }
-
-  .social-card {
-    margin: 0 7px;
-  }
-
-  .member {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .member p {
-    margin-left: auto;
-  }
-
-  .widget-container-full {
-    width: 85vw;
-  }
-
-  .widget-container-half {
-    width: 42.5vw;
-  }
 }
 /* ============================================= */
 /*                     Header                    */
@@ -536,6 +509,11 @@ a {
   background-color: #4D4C72;
   padding: 20px 0;
 }
+@media screen and (min-width: 768px) {
+  #nav-bar {
+    height: 100%;
+  }
+}
 
 #nav-container {
   display: flex;
@@ -543,11 +521,23 @@ a {
   width: 80%;
   margin: 0 auto;
 }
+@media screen and (min-width: 768px) {
+  #nav-container {
+    flex-direction: column;
+  }
+}
 
 .nav-item {
   width: 2.75em;
   stroke: #fff;
   fill: #fff;
+}
+@media screen and (min-width: 768px) {
+  .nav-item {
+    width: 2.25em;
+    padding-left: 5px;
+    margin-bottom: 25px;
+  }
 }
 
 /* ============================================= */
@@ -605,11 +595,25 @@ a {
   padding: 7.5px;
 }
 
+@media screen and (min-width: 768px) {
+  .widget-container-full {
+    width: 85vw;
+  }
+
+  .widget-container-half {
+    width: 42.5vw;
+  }
+}
 /* ============================================= */
 /*                 Daily Traffic                 */
 /* ============================================= */
 #daily-traffic {
   border-bottom: solid lightgrey 1px;
+}
+@media screen and (min-width: 768px) {
+  #daily-traffic {
+    border-right: solid lightgrey 1px;
+  }
 }
 
 #daily-traffic-h3 {
@@ -653,6 +657,13 @@ a {
 .social-cards-container {
   margin-bottom: 20px;
 }
+@media screen and (min-width: 768px) {
+  .social-cards-container {
+    display: flex;
+    flex: 1 33%;
+    justify-content: space-between;
+  }
+}
 
 .social-card {
   display: flex;
@@ -664,6 +675,11 @@ a {
   background: #f0e9e1;
   border: solid grey 1px;
   border-radius: 5px;
+}
+@media screen and (min-width: 768px) {
+  .social-card {
+    margin: 0 7px;
+  }
 }
 
 .social-image-container {
@@ -702,6 +718,7 @@ a {
 
 #new-members-h3, #activity-h3 {
   margin: 15px 0 20px;
+  margin-left: 1em;
 }
 
 .new-members-container, .recent-activity-container {
@@ -721,6 +738,17 @@ a {
   margin: 0 auto 20px;
   border-bottom: solid lightgrey 1px;
 }
+@media screen and (min-width: 768px) {
+  .member {
+    flex-direction: row;
+    padding-bottom: 1em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .member p {
+    margin-left: auto;
+  }
+}
 
 .member-avatar {
   border-radius: 50%;
@@ -736,6 +764,16 @@ a {
 }
 .members-text p {
   text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .members-text p {
+    text-align: start;
+  }
+}
+@media screen and (min-width: 768px) {
+  .members-text {
+    margin-left: 1em;
+  }
 }
 
 /* ============================================= */
@@ -761,7 +799,7 @@ form {
 
 .form-field {
   width: 100%;
-  padding: 7.5px;
+  padding: 0.8em;
   margin-bottom: 10px;
   background-color: #f2f2f2;
   border: solid 1px lightgray;
@@ -831,6 +869,11 @@ form {
   width: 47.5%;
 }
 
+@media screen and (min-width: 768px) {
+  label {
+    width: 45%;
+  }
+}
 /*
 * CSS TOGGLE SWITCH
 *

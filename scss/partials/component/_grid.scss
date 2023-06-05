@@ -48,25 +48,4 @@
     #mobile {
         grid-column: 2 / span 1;
     }
-    .social-cards-container {
-        display: flex;
-        flex: 1 33%;
-        justify-content: space-between;
-    }
-    .social-card {
-        margin: 0 7px;
-    }
-    .member {
-        flex-direction: row;
-        align-items: center;
-    }
-    .member p {
-        margin-left: auto;
-    }
-    .widget-container-full {
-        width: 85vw,
-    }
-    .widget-container-half {
-        width: 42.5vw,
-    }
 }   

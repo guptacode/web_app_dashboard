@@ -35,3 +35,12 @@
     border-radius: calc(2.5rem/2);
     padding: 7.5px;
 }
+
+@media screen and (min-width: 768px){
+    .widget-container-full {
+        width: 85vw,
+    }
+    .widget-container-half {
+        width: 42.5vw,
+    }
+}

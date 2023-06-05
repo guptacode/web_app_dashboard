@@ -8,6 +8,7 @@
 
 #new-members-h3, #activity-h3 {
     margin: 15px 0 20px;
+    margin-left: 1em;   
 }
 
 .new-members-container, .recent-activity-container {
@@ -26,6 +27,15 @@
     width: 95%;
     margin: 0 auto 20px;
     border-bottom: solid lightgrey 1px;
+    @media screen and (min-width: 768px){
+        flex-direction: row;
+        padding-bottom: 1em;
+    }
+    p {
+        @media screen and (min-width: 768px){
+            margin-left: auto;
+        }
+    }
 }
 
 .member-avatar {
@@ -41,6 +51,12 @@
     margin: 7.5px 0 10px;
     p {
         text-align: center;
+        @media screen and (min-width: 768px){
+            text-align: start;
+        }
+    }
+    @media screen and (min-width: 768px){
+        margin-left: 1em;
     }
 }
 
