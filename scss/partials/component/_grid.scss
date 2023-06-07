@@ -48,4 +48,23 @@
     #mobile {
         grid-column: 2 / span 1;
     }
+    .traffic-header {
+        display: flex;
+        justify-content: space-between;
+    }
+    .traffic-nav {
+        width: 40%;
+    }
+    #traffic-h3 {
+        align-self: center;
+    }
 }   
+
+@media screen and (min-width: 1024px) {
+    #new-members, #message {
+        grid-column: 1 / span 1;
+    }
+    #recent-activity, #settings {
+        grid-column: 2 / span 1;
+    }
+}

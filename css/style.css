@@ -352,10 +352,18 @@ template {
 /* ============================================= */
 /*              Element                      */
 /* ============================================= */
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
 h1 {
   color: #fff;
   margin-right: auto;
   padding-left: 10px;
+}
+h1::after {
+  content: "™";
 }
 
 h2 {
@@ -420,6 +428,28 @@ a {
   #mobile {
     grid-column: 2/span 1;
   }
+
+  .traffic-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .traffic-nav {
+    width: 40%;
+  }
+
+  #traffic-h3 {
+    align-self: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #new-members, #message {
+    grid-column: 1/span 1;
+  }
+
+  #recent-activity, #settings {
+    grid-column: 2/span 1;
+  }
 }
 /* ============================================= */
 /*                     Header                    */
@@ -461,7 +491,8 @@ a {
   background: white;
   border: solid 1px black;
   border-radius: 10px;
-  padding: 5px;
+  width: 75%;
+  padding: 10px;
 }
 
 .notification-close {
@@ -474,6 +505,26 @@ a {
   padding-left: 7.5px;
 }
 
+.notification-link {
+  transition: 0.3s ease-in-out;
+}
+
+.notification-link:hover {
+  cursor: pointer;
+  animation: shake 0.3s ease-in-out 0.1s 3 forwards;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+}
 #bell-container {
   position: relative;
 }
@@ -585,6 +636,12 @@ a {
 
 #traffic-h3 {
   margin-bottom: 10px;
+  margin-left: 0.5em;
+}
+@media screen and (min-width: 768px) {
+  #traffic-h3 {
+    margin-bottom: 0px;
+  }
 }
 
 .active {
@@ -617,7 +674,7 @@ a {
 }
 
 #daily-traffic-h3 {
-  margin: 15px 0 20px;
+  margin: 15px 0 20px 0.5em;
 }
 
 .daily-traffic-container {
@@ -632,7 +689,7 @@ a {
 }
 
 #mobile-h3 {
-  margin: 15px 0 20px;
+  margin: 15px 0 20px 0.5em;
 }
 
 .mobile-container {
@@ -647,7 +704,7 @@ a {
 }
 
 #social-h3 {
-  margin: 15px 0 20px;
+  margin: 15px 0 20px 0.5em;
 }
 
 .social-container {
@@ -718,7 +775,7 @@ a {
 
 #new-members-h3, #activity-h3 {
   margin: 15px 0 20px;
-  margin-left: 1em;
+  margin-left: 0.5em;
 }
 
 .new-members-container, .recent-activity-container {
@@ -818,9 +875,48 @@ form {
 #messageField {
   height: 100px;
 }
+@media screen and (min-width: 1024px) {
+  #messageField {
+    height: 110px;
+  }
+}
 
 #send {
   width: 100%;
+}
+
+#userField {
+  position: relative;
+}
+
+#suggestionList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: #ffffff;
+  border: 1px solid lightgray;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+#userField:focus + #suggestionList {
+  display: block;
+}
+
+#suggestionList li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+#suggestionList li:hover {
+  background-color: #f2f2f2;
 }
 
 /* ============================================= */
@@ -872,6 +968,11 @@ form {
 @media screen and (min-width: 768px) {
   label {
     width: 45%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  label {
+    width: 70%;
   }
 }
 /*

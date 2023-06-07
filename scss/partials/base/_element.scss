@@ -2,10 +2,18 @@
 /*              Element                      */
 /* ============================================= */
 
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
 h1 {
     color: $white;
     margin-right: auto;
-    padding-left: 10px
+    padding-left: 10px;
+    &::after {
+        content: '\2122';
+    }
 }
 
 h2 {

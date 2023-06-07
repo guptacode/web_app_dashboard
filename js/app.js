@@ -9,6 +9,7 @@ const trafficCanvas = document.querySelector('#traffic-chart');
 const dailyTrafficCanvas = document.querySelector('#daily-traffic-chart');
 const mobileCanvas = document.querySelector('#mobile-chart');
 const user = document.getElementById("userField");
+const suggestionList = document.getElementById("suggestionList");
 const message = document.getElementById("messageField");
 const send = document.getElementById("send");
 const sendEmail = document.querySelector('#send-email');
@@ -149,12 +150,12 @@ const mobileChart = new Chart(mobileCanvas, {
 function timeScale(chart, period) {
     chart.data = trafficData[period];
     chart.update();
-};
+}
 
 alert.innerHTML = `<div class="alert-banner">
                     <p><strong>Alert:</strong> You have <strong>6</strong> unread messages.</p>
                     <p class="alert-banner-close">x</p>
-                   </div>`
+                   </div>`;
 
 // Event listener for Alert
 alert.addEventListener('click', (e) => {
@@ -201,6 +202,47 @@ trafficHeader.addEventListener('click', (e) => {
     }
 });
 
+//Autocomplete functionality for User Search
+
+const members = [
+    "Victoria Chambers",
+    "Dale Byrd",
+    "Dawn Wood",
+    "Dan Oliver",
+    "Rocio Gonzalez",
+    "Kevin Daniels",
+];
+let matchedMembers = [];
+
+function displaySuggestions() {
+    suggestionList.innerHTML = "";
+  
+    matchedMembers.forEach(member => {
+      const suggestionItem = document.createElement("li");
+      suggestionItem.textContent = member;
+      suggestionItem.addEventListener("click", () => {
+        user.value = member;
+        suggestionList.innerHTML = "";
+      });
+      suggestionList.appendChild(suggestionItem);
+    });
+}
+
+function searchMembers(query) {
+    matchedMembers = members.filter(member => {
+      const lcQuery = query.toLowerCase();
+      const lcMember = member.toLowerCase();
+      return lcMember.includes(lcQuery);
+    });
+    displaySuggestions();
+}    
+
+// Event listener for the search input field
+user.addEventListener("input", (e) => {
+    const query = e.target.value;
+    searchMembers(query);
+});
+
 //Event listener for Message Send
 send.addEventListener('click', (e) => {
     if (user.value === "" && message.value === "") {
@@ -223,7 +265,7 @@ function retrieveSettings() {
     sendEmailNotification = JSON.parse(localStorage.getItem('sendEmailNotification'));
     profileToPublic = JSON.parse(localStorage.getItem('profileToPublic'));
     selectTimezone = localStorage.getItem('selectTimezone');
-};
+}
 
 function enactSettings() {
     if (sendEmailNotification)  {
@@ -243,7 +285,7 @@ function enactSettings() {
      } else {
         timezone.value = "none";
      }
-};
+}
 
 // Event Listener for Save Settings
 save.addEventListener('click', (e)=> {

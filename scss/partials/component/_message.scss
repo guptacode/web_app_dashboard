@@ -40,8 +40,45 @@ form {
 
 #messageField {
     height: 100px;
+    @media screen and (min-width: 1024px) {
+        height: 110px;
+    }
 }
 
 #send {
     width: 100%;
+}
+
+#userField {
+position: relative;
+}
+
+#suggestionList {
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 999;
+width: 100%;
+padding: 0;
+margin: 0;
+list-style: none;
+background-color: #ffffff;
+border: 1px solid lightgray;
+border-top: none;
+border-radius: 0 0 5px 5px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+display: none;
+}
+
+#userField:focus + #suggestionList {
+display: block;
+}
+
+#suggestionList li {
+padding: 8px 12px;
+cursor: pointer;
+}
+
+#suggestionList li:hover {
+background-color: #f2f2f2;
 }

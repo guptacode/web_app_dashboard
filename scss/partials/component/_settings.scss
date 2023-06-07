@@ -50,3 +50,8 @@
         width: 45%;
     }    
  }
+ @media screen and (min-width: 1024px) {
+    label {
+        width: 70%;
+    }
+ }
